@@ -3,20 +3,18 @@
 ---
 galaxy_info:
   author: iambryancs
-  description: Webtatic repo for RHEL/CentOS.
+  description: Webtatic repo for RHEL/CentOS
   company: "PowerStormTech"
   license: "license (MIT)"
   min_ansible_version: 1.8
-  github_branch: master
   platforms:
   - name: EL
-   versions:   
-   - 5
-   - 6
-   - 7
+    versions:
+    - 5
+    - 6
+    - 7
   galaxy_tags:
     - webtatic
-    - webtatic-repo
     - repository
 dependencies:
   - role: geerlingguy.repo-epel
