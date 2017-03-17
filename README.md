@@ -13,12 +13,5 @@ Make sure you are running this on RHEL/CentOS
   roles: 
     - iambryancs.repo-webtatic
 ```
-# Example requirements.yml
-```yml
----
-- src: geerlingguy.repo-epel
-- src: iambryancs.repo-webtatic
-```
-
 # License
 MIT
