@@ -1,0 +1,5 @@
+# meta/main.yml
+# Author: iambryancs
+---
+dependencies:
+  - role: geerlingguy.repo-epel

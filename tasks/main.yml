@@ -1,0 +1,9 @@
+# tasks/main.yml
+# Author: iambryancs
+---
+- name: Install Webtatic repo
+  yum:
+    name: "{{ item.url }}"
+    state: present
+  when: ansible_distribution_major_version == '{{ item.version }}'
+  with_items: "{{ repos }}"

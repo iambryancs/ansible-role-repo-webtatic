@@ -1,0 +1,7 @@
+# vars/main.yml
+# Author: iambryancs
+---
+repos:
+  - { url: "https://mirror.webtatic.com/yum/el5/latest.rpm", version: 5}
+  - { url: "https://mirror.webtatic.com/yum/el6/latest.rpm", version: 6}
+  - { url: "https://mirror.webtatic.com/yum/el7/webtatic-release.rpm", version: 7}
