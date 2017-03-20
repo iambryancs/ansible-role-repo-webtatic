@@ -1,29 +1,16 @@
 ---
-language: python
-python: "2.7"
+services: docker
 
-# Use the new container infrastructure
-sudo: false
-
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
-
-install:
-  # Install ansible
-  - pip install ansible
-
-  # Check ansible version
-  - ansible --version
-
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
+before_install:
+  # Build image to use
+  - 'docker build -t iambryancs/ansible-test-image -f tests/Dockerfile .'
 
 script:
   # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  - 'docker run -t --rm iambryancs/ansible-test-image ansible-playbook /etc/ansible/roles/iambryancs.repo-webtatic/tests/test.yml --syntax-check'
+
+  # Test role
+  - 'docker run -t --rm iambryancs/ansible-test-image ansible-playbook /etc/ansible/roles/iambryancs.repo-webtatic/tests/test.yml'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
